@@ -151,3 +151,61 @@ reserach vessel
 ## 2019
 Evaluation of using ASVs for acoustic measurement of fish. They're
 pretty good, they suppose.
+
+-- PATH PLANNING --
+# Path planning and collision avoidance for autonomous surface 
+vehicles I: a review
+## Vagale
+## 2021
+There has been an increasing interest in the development of
+ASVs. The paper summarizes techniques for path planning
+for ASVs - focusing on collision avoidance.
+
+ASVs main benefit is the increased safety, where most boating
+accidents occur due to human error. Other benefits include better
+energy use, improved reliability, smaller frame, and reduced
+design constraints.
+
+ASV systems normally have 3 core components: Guidance, Navigation,
+and Control.
+    - Guidance generates a path for the ASV to follow. It consistently
+    generates feasible paths as it gets further information about
+    the ASV's state, the environment, etc. This is the path planning
+    portion. Some other schools of thought put path planning
+    in an entirely separate module.
+    - Navigation is what gathers all the information to give to Guidance.
+    It attempts to estimate its own position while sensing the
+    environment.
+    - Control determines forces necessary to apply to follow the
+    path given by Guidance correctly. Aim is to minimize error when
+    following a trajectory and determine if a calculated path is
+    feasible.
+
+There's global path planning and local path planning. Global assumes
+full knowledge of the environment. Local focuses more on collision
+avoidance based on sensor data.
+
+3 approaches to path planning: classical, advanced, and hybrid
+    - Classical involves environmental modeling and performing
+    an optimal path search.
+        - Environmental modeling has two approaches: roadmap
+        and cell decomposition.
+            - Roadmap actualizes free space using a graph.
+            - Cell decomp splits the environment into discrete cells.
+            - Both methods assume STATIC environments.
+    - Advanced is better for dynamic environment modeling and has
+    several approaches.
+        - Machine learning. We all know this one.
+        - Directional approaches
+            - Potential field: Attractive fields are assigned
+            to the target and negative fields are assigned to obstacles.
+            A trajectory is able to be determined in real-time.
+            - Velocity space methods.
+            - Velocity field histogram methods.
+        - Evolutionary algorithms: mimicking biological behavior systems
+        for reinforcement learning. Potential to get stuck in local 
+        minima.
+        - Sampling: things like RRT.
+    - Hybrid. Does both. Go figure.
+
+

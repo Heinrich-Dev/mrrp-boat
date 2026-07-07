@@ -1,6 +1,8 @@
 from rplidar import RPLidar
 lidar = RPLidar('/dev/ttyUSB0')
 
+lidar.start_motor()
+
 info = lidar.get_info()
 print(info)
 
@@ -9,9 +11,14 @@ print(health)
 
 for i, scan in enumerate(lidar.iter_scans()):
     print('%d: Got %d measurements ' % (i, len(scan)))
+    for (quality, angle, distance) in scan:
+        print('Quality: %d ' % quality)
+        print('Angle: %f ' % angle)
+        print('Distance: %f ' % distance)
+
     if i > 10:
         break
-
+        
 lidar.stop()
 lidar.stop_motor()
 lidar.disconnect()

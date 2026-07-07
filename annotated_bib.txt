@@ -208,4 +208,14 @@ avoidance based on sensor data.
         - Sampling: things like RRT.
     - Hybrid. Does both. Go figure.
 
+# Improved Dijkstra Algorithm for Mobile Robot Path Planning
+and Obstacle Avoidance
+## Alshammrei
+## 2022
 
+I originally chose this because ArduPilot uses Dijkstra's for its
+object avoidance under the hood, but this paper can just be included
+since it is another group focusing on using cheap and open source
+materials to build a robot platform and test something. Dijkstra's
+actually takes a back seat in this paper and it is mostly about
+how they made the robot.

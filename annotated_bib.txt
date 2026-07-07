@@ -219,3 +219,13 @@ since it is another group focusing on using cheap and open source
 materials to build a robot platform and test something. Dijkstra's
 actually takes a back seat in this paper and it is mostly about
 how they made the robot.
+
+As for the Dijkstra's portion, they run a regular Dijkstra's
+assuming no obstacles. On an obstacle being detected at a node
+in the graph, infinity is assigned to the path from the current
+node and the obstacle node. Dijkstra's is then ran again.
+
+This solution seems naive and is prone to heavy computational
+load in crowded environments. ArduPilot does a hybrid approach
+of an initial Dijkstra's then uses a custom BendyRuler algorithm
+to avoid heavy computation.
